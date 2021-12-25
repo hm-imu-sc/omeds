@@ -1,0 +1,208 @@
+    if data_name == 'name':
+        new_name = request.POST.get('new_name')
+        command = (
+            "UPDATE {} ".format(user_type) +
+            "SET name='{}'".format(new_name) +
+            "WHERE username LIKE '{}'".format(username)
+        )
+        cursor.execute(command)
+    elif data_name == 'username':
+        new_username = request.POST.get('new_username')
+
+        command = (
+            "SELECT COUNT(username) " +
+            "FROM doctor " +
+            "WHERE username LIKE '{}'".format(username)
+        )
+        cursor.execute(command)
+        count_username = int(cursor.fetchall()[0][0])
+        command = (
+            "SELECT COUNT(username) " +
+            "FROM patient " +
+            "WHERE username LIKE '{}'".format(username)
+        )
+        cursor.execute(command)
+        count_username += int(cursor.fetchall()[0][0])
+
+        if count_username>0:
+            alerts = [
+                "'{}' is not available !!!".format(new_username)
+            ]
+            return change_data_page(request, data_name, current_data, alerts)
+        else:
+            command = (
+                    "UPDATE {} ".format(user_type) +
+                    "SET username='{}'".format(new_username) +
+                    "WHERE username LIKE '{}'".format(username)
+            )
+            cursor.execute(command)
+    elif data_name == 'email':
+        new_email = request.POST.get('new_email')
+
+        command = (
+            "SELECT COUNT(username) " +
+            "FROM doctor " +
+            "WHERE email LIKE '{}'".format(new_email)
+        )
+        cursor.execute(command)
+        count_email = int(cursor.fetchall()[0][0])
+        command = (
+            "SELECT COUNT(username) " +
+            "FROM patient " +
+            "WHERE email LIKE '{}'".format(new_email)
+        )
+        cursor.execute(command)
+        count_email += int(cursor.fetchall()[0][0])
+
+        if count_email>0:
+            alerts = [
+                "'{}' is already associated with another account !!!".format(new_email)
+            ]
+            return change_data_page(request, data_name, current_data, alerts)
+        else:
+            command = (
+                "UPDATE {} ".format(user_type) +
+                "SET email='{}'".format(new_email) +
+                "WHERE username LIKE '{}'".format(username)
+            )
+            cursor.execute(command)
+    elif data_name == 'mobile_number':
+        new_mobile_number = request.POST.get('new_mobile_number')
+
+        command = (
+            "SELECT COUNT(username) " +
+            "FROM doctor " +
+            "WHERE mobile_number LIKE '{}'".format(new_mobile_number)
+        )
+        cursor.execute(command)
+        count_mobile_number = int(cursor.fetchall()[0][0])
+        command = (
+            "SELECT COUNT(username) " +
+            "FROM patient " +
+            "WHERE mobile_number LIKE '{}'".format(new_mobile_number)
+        )
+        cursor.execute(command)
+        count_mobile_number += int(cursor.fetchall()[0][0])
+
+        if count_mobile_number>0:
+            alerts = [
+                "'{}' is already associated with another account !!!".format(new_mobile_number)
+            ]
+            return change_data_page(request, data_name, current_data, alerts)
+        else:
+            command = (
+                    "UPDATE {} ".format(user_type) +
+                    "SET mobile_number='{}'".format(new_mobile_number) +
+                    "WHERE username LIKE '{}'".format(username)
+            )
+            cursor.execute(command)
+    elif data_name == 'date_of_birth':
+        new_date_of_birth = request.POST.get('new_date_of_birth')
+        command = (
+            "UPDATE {} ".format(user_type) +
+            "SET date_of_birth='{}'".format(new_date_of_birth) +
+            "WHERE username LIKE '{}'".format(username)
+        )
+        cursor.execute(command)
+    elif data_name == 'gender':
+        new_gender = request.POST.get('new_gender')
+        command = (
+            "UPDATE {} ".format(user_type) +
+            "SET gender='{}'".format(new_gender) +
+            "WHERE username LIKE '{}'".format(username)
+        )
+        cursor.execute(command)
+    elif data_name == 'password':
+        new_password = request.POST.get('new_password')
+        command = (
+            "UPDATE {} ".format(user_type) +
+            "SET enc_pass='{}'".format(hasher.hash(new_password)) +
+            "WHERE username LIKE '{}'".format(username)
+        )
+        cursor.execute(command)
+
+    return profile_page(request)
+# def check_and_get_login(request):
+#     cookie_content = request.COOKIES.get('_login_session')
+#
+#     try:
+#         session_id = cookie_content.split('_')[0]
+#     except:
+#         session_id = -1
+#
+#     command = (
+#         "DELETE FROM session WHERE expires<NOW()"
+#     )
+#     cursor.execute(command)
+#
+#     command = (
+#         "SELECT " +
+#         "CASE " +
+#         "WHEN expires > NOW() THEN 1 " +
+#         "ELSE 0 " +
+#         "END as active_status " +
+#         "FROM session " +
+#         "WHERE id={}".format(session_id)
+#     )
+#     cursor.execute(command)
+#
+#     try:
+#         active_status = int(cursor.fetchall()[0][0])
+#     except:
+#         active_status = 0
+#
+#     if active_status == 1:
+#
+#         command = (
+#             "UPDATE session " +
+#             "SET expires=DATE_ADD(NOW(), INTERVAL 3 DAY) " +
+#             "WHERE id={}".format(session_id)
+#         )
+#         cursor.execute(command)
+#
+#         command = (
+#             "SELECT username, user_type " +
+#             "FROM session " +
+#             "WHERE id={}".format(session_id)
+#         )
+#         cursor.execute(command)
+#         query_data = cursor.fetchall()[0]
+#
+#         command = (
+#             "SELECT name FROM {} ".format(query_data[1]) +
+#             "WHERE username LIKE '{}'".format(query_data[0])
+#         )
+#         cursor.execute(command)
+#
+#         name = cursor.fetchall()[0][0]
+#
+#         # command = (
+#         #     "INSERT INTO logged_in_users " +
+#         #     "VALUES ({}, {}, {})".format(query_data[0], query_data[1], session_id)
+#         # )
+#         # cursor.execute(command)
+#         user_dict = {
+#             'username': query_data[0],
+#             'user_type': query_data[1],
+#             'name': name,
+#             'session_id': session_id,
+#         }
+#         return user_dict
+#     else:
+#         return {'username': 'null'}
+#
+#
+# def check_login(request):
+#
+#     user_dict = check_and_get_login(request)
+#
+#     if user_dict['username'] != 'null':
+#         if user_dict['user_type'] == 'doctor':
+#             return doctor_home_page(request)
+#         else:
+#             return patient_home_page(request)
+#     else:
+#         return 'null'
+
+<div class="overflow-auto">...</div>
+<div class="overflow-hidden">...</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block additions %}{% endblock %}
+            <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'app/css/page_template.css' %}">
+        {% block my_stylesheet %}{% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'app:landing_page' %}"><b>OMEDS</b></a>
+
+{#                <ul class="navbar-nav mr-auto">#}
+{#                    <li class="nav-item"><a class="nav-link" href="{% url 'app:test_page' %}">Test Page</a></li>#}
+{#                    <li class="nav-item"><a class="nav-link" href="{% url 'app:view_database_page' %}">View Database</a></li>#}
+{#                </ul>#}
+
+                <ul class="navbar-nav justify-content-end">
+                    {% if login_status == "true" %}
+                        <li class="nav-item">
+                            <div class="input-group">
+                                <div class="input-group-prepend" id="logged_in_username">
+                                    <div class="input-group-text attach-text">
+                                        <a id="logged_in_user_name" href="{% url 'app:home_page' %}"><b>{{ logged_in_username }}</b></a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="form-control btn dropdown-toggle" id="logged_in_user_options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuOffset">
+                                        <a class="dropdown-item" href="{% url 'app:profile_page' %}">Profile</a>
+                                        {% if user_type == "patient" %}
+                                            <a class="dropdown-item" href="{% url 'app:home_page' %}">Wallet</a>
+                                        {% endif %}
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{% url 'app:manage_account_page' %}">Manage Account</a>
+                                        <a class="dropdown-item" href="{% url 'app:logout' %}">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {% endif %}
+                    {% if page_name == "registration_page" %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'app:login_page' %}">Login</a></li>
+                    {% elif page_name == "login_page" %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'app:registration_page' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </nav>
+        <br>
+        <div class="container">
+            <br><br>
+            <style>
+                body {
+                    background-image: url("{% static 'app/img/background-4.jpg' %}");
+                    background-size: cover;
+                }
+            </style>
+            {% block main_block %}{% endblock %}
+        </div>
+        <script src="{% static 'jquery/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        {% block my_script %}{% endblock %}
+    </body>
+</html>

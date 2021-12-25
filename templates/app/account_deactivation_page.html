@@ -1,0 +1,54 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/account_deactivation_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/account_deactivation_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Account Deactivation</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron view-card">
+            <div class="jumbotron">
+                <p>
+                    <h4 class="text-basic" align="center">
+                        To <span class="text-dangerous"><b>DE-ACTIVATE</b></span> your account, please enter your password twice.
+                    </h4>
+                </p>
+                <br>
+                 {% for alert in alerts %}
+                    <div class="alert alert-error alert-dismissible fade show" role="alert">
+                        {{ alert }}
+                        <button type="button" class="close alert-error-dissmiss-button" data-dismiss="alert" aria-label="Close">
+                            &#9932;
+                        </button>
+                    </div>
+                {% endfor %}
+                <form class="form-group" action="{% url 'app:account_deactivation' %}" method="post">
+                    {% csrf_token %}
+                    <p><input class="form-control" id="password" name="password" type="password" placeholder="Password"></p>
+                    <p><input class="form-control" id="retype_password" name="retype_password" type="password" placeholder="Retype Password"></p>
+                    <br>
+                    <input class="btn my_btn btn-block" id="submit" type="submit" value="DEACTIVATE ACCOUNT">
+                </form>
+            </div>
+        </div>
+
+    {% endblock %}

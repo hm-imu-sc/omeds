@@ -1,0 +1,34 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/manage_account_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/manage_account_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Manage Account</h1>
+            </div>
+        </div>
+        <div class="jumbotron view-card">
+            <div class="jumbotron">
+                <a class="btn my_btn btn-block" href="{% url 'app:change_data_page' 'password' 'null' %}">Change Password</a>
+                <a class="btn my_btn btn-block" href="{% url 'app:account_deactivation_page' %}">De-activate Account</a>
+                <a class="btn my_btn btn-block" href="{% url 'app:account_deletion_page' %}">Delete Account</a>
+            </div>
+        </div>
+    {% endblock %}

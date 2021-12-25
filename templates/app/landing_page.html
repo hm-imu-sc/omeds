@@ -1,0 +1,39 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        Welcome to OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/landing_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/landing_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 class="text text-center">Welcome to OMEDS</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col">
+                    <a class="btn my_btn btn-block" href="{% url 'app:login_page' %}">Login</a>
+                </div>
+                <div class="col">
+                    <a class="btn my_btn btn-block" href="{% url 'app:registration_page' %}">Register</a>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

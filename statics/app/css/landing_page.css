@@ -1,0 +1,9 @@
+a.my_btn:link,
+a.my_btn:active,
+a.my_btn:visited {
+    color: #39ff68;
+}
+
+a.my_btn:hover {
+    color: black;
+}

@@ -1,0 +1,16 @@
+CREATE TABLE Doctor (username varchar(32) NOT NULL, email varchar(32) NOT NULL, enc_pass varchar(256) NOT NULL, name int(64) NOT NULL, mobile_number varchar(16) NOT NULL, date_of_birth date NOT NULL, speciality varchar(512), visit_fee double NOT NULL, balance double NOT NULL, PRIMARY KEY (username));
+CREATE TABLE Patient (username varchar(32) NOT NULL, email varchar(32) NOT NULL, enc_pass varchar(256) NOT NULL, name int(64) NOT NULL, mobile_number varchar(16) NOT NULL, date_of_birth date NOT NULL, balance double, PRIMARY KEY (username));
+CREATE TABLE `Prescription headers` (prescription_id varchar(255) NOT NULL, problem_description varchar(4096) NOT NULL, tests_required varchar(512), patient_username varchar(32) NOT NULL, doctor_username varchar(32) NOT NULL, PRIMARY KEY (prescription_id));
+CREATE TABLE `Medicine List` (medicine_name varchar(128) NOT NULL, dose varchar(64) NOT NULL, when_to_take char(3) NOT NULL, duration varchar(64) NOT NULL, instructions varchar(512), prescription_id varchar(255) NOT NULL, PRIMARY KEY (medicine_name, prescription_id));
+CREATE TABLE History (doctor_username varchar(32) NOT NULL, patient_username varchar(32) NOT NULL, datetime date NOT NULL, PRIMARY KEY (doctor_username, patient_username));
+CREATE TABLE Admin (`Column` int(10));
+CREATE TABLE Scedule (doctor_username varchar(32) NOT NULL, scedule_id int(10) NOT NULL AUTO_INCREMENT, datetime date NOT NULL, PRIMARY KEY (scedule_id));
+CREATE TABLE Appointments (Scedulescedule_id int(10) NOT NULL, Patientusername varchar(32) NOT NULL, payment_amount double NOT NULL, payment_confirmation double NOT NULL, PRIMARY KEY (Scedulescedule_id, Patientusername));
+ALTER TABLE `Prescription headers` ADD INDEX FKPrescripti356478 (patient_username), ADD CONSTRAINT FKPrescripti356478 FOREIGN KEY (patient_username) REFERENCES Patient (username);
+ALTER TABLE `Medicine List` ADD INDEX `FKMedicine L654708` (prescription_id), ADD CONSTRAINT `FKMedicine L654708` FOREIGN KEY (prescription_id) REFERENCES `Prescription headers` (prescription_id);
+ALTER TABLE History ADD INDEX FKHistory720469 (doctor_username), ADD CONSTRAINT FKHistory720469 FOREIGN KEY (doctor_username) REFERENCES Doctor (username);
+ALTER TABLE History ADD INDEX FKHistory65103 (patient_username), ADD CONSTRAINT FKHistory65103 FOREIGN KEY (patient_username) REFERENCES Patient (username);
+ALTER TABLE Scedule ADD INDEX FKScedule152060 (doctor_username), ADD CONSTRAINT FKScedule152060 FOREIGN KEY (doctor_username) REFERENCES Doctor (username);
+ALTER TABLE Appointments ADD INDEX FKAppointmen772963 (Patientusername), ADD CONSTRAINT FKAppointmen772963 FOREIGN KEY (Patientusername) REFERENCES Patient (username);
+ALTER TABLE Appointments ADD INDEX FKAppointmen507267 (Scedulescedule_id), ADD CONSTRAINT FKAppointmen507267 FOREIGN KEY (Scedulescedule_id) REFERENCES Scedule (scedule_id);
+ALTER TABLE `Prescription headers` ADD INDEX FKPrescripti988154 (doctor_username), ADD CONSTRAINT FKPrescripti988154 FOREIGN KEY (doctor_username) REFERENCES Doctor (username);

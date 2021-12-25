@@ -1,0 +1,33 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/successfull_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/successfull_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <br><br><br>
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 class="text-center">Registration Successfull !!!</h1>
+            </div>
+        </div>
+
+        <div class="view-card">
+            <a class="btn my_btn btn-block" href="{% url 'app:login_page' %}">Login</a>
+        </div>
+
+    {% endblock %}

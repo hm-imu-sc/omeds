@@ -1,0 +1,21 @@
+.attach-text-link {
+    border: 1px solid #22e3ea;
+    background-color: #117458;
+    font-weight: bold;
+}
+
+.attach-text-link:hover {
+    border-color: #2fc951;
+    background-color: #2fc951;
+}
+
+.attach-text-link a:active,
+.attach-text-link a:visited,
+.attach-text-link a:link {
+  color: black;
+}
+
+.attach-text-link a:hover {
+    border-color: #2fc951;
+    background-color: #2fc951;
+}

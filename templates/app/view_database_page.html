@@ -1,0 +1,35 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/view_database_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/view_database_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Select a table</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron view-card">
+            <div class="jumbotron">
+                {% for table_name in table_names %}
+                    <a class="btn my_btn btn-block" href="{% url 'app:view_table_page' table_name %}">{{ table_name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/view_table_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/view_table_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                 <h1 class="text-center">Table: {{ table_name }}</h1>
+            </div>
+        </div>
+        <div class="jumbotron">
+
+            <div class="overflow-auto">
+                <div class="table_div overflow-auto">
+                    <table class="table table-bordered table-sm text-basic">
+                        <thead>
+                            {% for column_name in column_names %}
+                                <th>{{ column_name.0 }}</th>
+                            {% endfor %}
+                        </thead>
+
+                        {% for row in table %}
+                            <tr>
+                                {% for field in row %}
+                                    <td>{{ field }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

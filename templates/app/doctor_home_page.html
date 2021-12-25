@@ -1,0 +1,48 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/doctor_home_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/doctor_home_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Welcome {{ logged_in_username }}</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col">
+                    <a class="btn my_btn btn-block" href="{% url 'app:doctor_home_page' %}">Set and Manage Schedules</a>
+                </div>
+                <div class="col">
+                    <a class="btn my_btn btn-block" href="{% url 'app:doctor_home_page' %}">Check/Withdraw Balance</a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <a class="btn my_btn btn-block" href="{% url 'app:doctor_home_page' %}">My Online Chamber</a>
+                </div>
+                <div class="col">
+                    <a class="btn my_btn btn-block" href="{% url 'app:doctor_home_page' %}">History</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

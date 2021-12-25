@@ -1,0 +1,20 @@
+
+.alert-success {
+    border: 2px solid lime;
+    border-radius: 5px;
+    background-color: #001f00;
+    padding: 8px;
+    margin-bottom: 8px;
+    color: lime;
+}
+
+.alert-success-dissmiss-button {
+    float: right;
+    font-size: 1rem;
+    text-shadow: none;
+    height: 40px;
+}
+
+.alert-success-dissmiss-button:hover {
+    color: lime;
+}

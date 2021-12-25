@@ -1,0 +1,117 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/change_data_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/change_data_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Change {{ header }}</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron view-card">
+            <div class="jumbotron">
+
+                {% for alert in alerts %}
+                    <div class="jumbotron alert-error">
+                        &nbsp;&nbsp;&nbsp;{{ alert }}
+                    </div>
+                {% endfor %}
+
+                <form class="form-group" action="{% url 'app:change_data' %}" method="post">
+
+                    {% csrf_token %}
+
+                    {% if not data_name == "password" %}
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text attach-text">
+                                        Current {{ header }}:
+                                    </div>
+                                </div>
+                                <input class="form-control view-field" type="text" value="{{ current_data }}" readonly>
+                            </div>
+                        </p>
+                    {% endif %}
+
+                    {% if data_name == "name" %}
+
+                        <p><input class="form-control" id="new_name" name="new_data" type="text" placeholder="New Name" required></p>
+
+                    {% elif data_name == "username" %}
+
+                        <p><input class="form-control" id="new_username" name="new_data" type="text" placeholder="New Username" required></p>
+
+                    {% elif data_name == "email" %}
+
+                        <p><input class="form-control" id="new_email" name="new_data" type="email" placeholder="New Email" required></p>
+
+                    {% elif data_name == "mobile_number" %}
+
+                        <p><input class="form-control" id="new_mobile_number" name="new_data" type="text" placeholder="New Mobile number" required></p>
+
+                    {% elif data_name == "date_of_birth" %}
+
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text attach-text">
+                                        Set date of birth to :
+                                    </div>
+                                </div>
+                                <input class="form-control" id="new_date_of_birth" name="new_data" type="date" required>
+                            </div>
+                        </p>
+
+                    {% elif data_name == "gender" %}
+
+                        <p><input class="form-control" id="new_gender" name="new_data" type="text" placeholder="New Gender" required></p>
+
+                    {% elif data_name == "password" %}
+
+                        <p>
+                            <input class="form-control" id="new_password" name="new_data" type="text" placeholder="New Password" required>
+                            <small id="passwordHelpBlock" class="form-text text-center text-basic">
+                                Your password must be 8-20 characters long, contain letters, special characters and numbers, and must not contain spaces.
+                            </small>
+                        </p>
+                        <p><input class="form-control" id="retype_new_password" name="retype_new_data" type="text" placeholder="Retype new password" required></p>
+
+                    {% endif %}
+
+                    <br>
+                    <input class="form-control" id="password" name="password" type="password" placeholder="Password" required>
+
+                    <br>
+
+                    <input id="data_name" name="data_name" type="text" value="{{ data_name }}" hidden readonly>
+                    <input name="current_data" type="text" value="{{ current_data }}" hidden readonly>
+
+                    {% if data_name == "password" %}
+                        <input class="btn my_btn btn-block" id="submit" name="submit" type="submit" value="Change" disabled>
+                    {% else %}
+                        <input class="btn my_btn btn-block" id="submit" name="submit" type="submit" value="Change">
+                    {% endif %}
+
+                </form>
+            </div>
+        </div>
+
+    {% endblock %}

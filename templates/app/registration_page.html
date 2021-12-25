@@ -1,0 +1,108 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/registration_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/registration_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Registration</h1>
+            </div>
+        </div>
+
+        {% for alert in alerts %}
+            <div class="alert alert-error alert-dismissible fade show" role="alert">
+                {{ alert }}
+                <button type="button" class="close alert-error-dissmiss-button" data-dismiss="alert" aria-label="Close">
+                    &#9932;
+                </button>
+            </div>
+        {% endfor %}
+
+        <div class="jumbotron">
+
+            <form class="form-group" action="{% url 'app:registration' %}" method="post">
+
+                {% csrf_token %}
+
+                <p>
+                    <select class="form-control" name="user_type" id="user_type">
+                        <option value="null" selected>Select your user type</option>
+                        <div class="custom_select_option">
+                            <option value="general_user">General User</option>
+                        </div>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </p>
+
+                <p><input class="form-control" id="name" name="name" type="text" value="{{ name }}" placeholder="Full Name" required></p>
+
+                <p><input class="form-control" id="username" name="username" type="text" value="{{ username }}" placeholder="Username" required></p>
+
+                <p><input class="form-control" id="email" name="email" type="email" value="{{ email }}" placeholder="Email" required></p>
+
+                <p><input class="form-control" id="mobile_no" name="mobile_no" type="text" value="{{ mobile_no }}" placeholder="Mobile No." required></p>
+
+                <p>
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control" id="password" name="password" type="text" value="{{ password }}" placeholder="Password" required>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" id="retype_password" name="retype_password" type="text" value="{{ retype_password }}" placeholder="Retype Password" required>
+                        </div>
+                    </div>
+                    <small id="passwordHelpBlock" class="form-text text-center text-basic">
+                        Your password must be 8-20 characters long, contain letters, special characters and numbers, and must not contain spaces.
+                    </small>
+                </p>
+
+                <p>
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="attach-text input-group-text">Select your date of birth:</div>
+                                </div>
+                                <input class="form-control" id="date_of_birth" name="date_of_birth" type="date" value="{{ date_of_birth }}" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="attach-text input-group-text">Select your Gender:</div>
+                                </div>
+                                <select class="form-control" name="gender" id="gender">
+                                    <option value="male" selected>Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </p>
+
+                <br>
+
+                <input class="btn my_btn btn-block" id="submit" type="submit" value="Submit" disabled>
+
+            </form>
+        </div>
+
+    {% endblock %}

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2585081d-d829-4134-bd8d-fb8cef2750b7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MainDatabase" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MainDatabase" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MainDatabase" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="omeds: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MainDatabase" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="omeds: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="patient: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="Django Page" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1c8zR3tyY43H6IAOS0tH6ChCIGs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Israil Husain\Desktop\Project\OMEDS\statics\app\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Israil Husain\Desktop\Project\OMEDS\statics" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="OMEDS" type="Python.DjangoServer" factoryName="Django server">
+      <module name="OMEDS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="OMEDS.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2585081d-d829-4134-bd8d-fb8cef2750b7" name="Default Changelist" comment="" />
+      <created>1589924996977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589924996977</updated>
+      <workItem from="1589925000219" duration="3597000" />
+      <workItem from="1589947511694" duration="7380000" />
+      <workItem from="1589975432248" duration="176000" />
+      <workItem from="1590068229576" duration="5659000" />
+      <workItem from="1590075470828" duration="7414000" />
+      <workItem from="1590097464692" duration="3300000" />
+      <workItem from="1590122912308" duration="14238000" />
+      <workItem from="1590147870765" duration="249000" />
+      <workItem from="1590154067911" duration="165000" />
+      <workItem from="1590156935238" duration="3735000" />
+      <workItem from="1590182777076" duration="3666000" />
+      <workItem from="1590205967954" duration="5776000" />
+      <workItem from="1590291853611" duration="20304000" />
+      <workItem from="1590329822986" duration="6191000" />
+      <workItem from="1590374531557" duration="37122000" />
+      <workItem from="1590472116838" duration="2641000" />
+      <workItem from="1590497371636" duration="2430000" />
+      <workItem from="1590747521438" duration="3548000" />
+      <workItem from="1590752725433" duration="1224000" />
+      <workItem from="1590759009561" duration="12736000" />
+      <workItem from="1590840965642" duration="4814000" />
+      <workItem from="1590984681869" duration="3437000" />
+      <workItem from="1591019895869" duration="5760000" />
+      <workItem from="1591174486144" duration="702000" />
+      <workItem from="1591348866460" duration="1416000" />
+      <workItem from="1591411862366" duration="162000" />
+      <workItem from="1591510917552" duration="5289000" />
+      <workItem from="1591518040442" duration="6528000" />
+      <workItem from="1591533984599" duration="3811000" />
+      <workItem from="1611117851541" duration="181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="23" key="#SQL_Dialects" timestamp="1590762123831">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="23" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1590762123831" />
+    <state x="275" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589948157867">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1589948157867" />
+    <state x="257" y="13" width="822" height="577" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1589928450789">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="257" y="13" width="822" height="577" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589928450789" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1591512565652">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1591512565652" />
+    <state width="905" height="54" key="GridCell.Tab.0.bottom" timestamp="1591024309974">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="54" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591024309974" />
+    <state width="905" height="54" key="GridCell.Tab.0.center" timestamp="1591024309974">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="54" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591024309974" />
+    <state width="905" height="54" key="GridCell.Tab.0.left" timestamp="1591024309974">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="54" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591024309974" />
+    <state width="905" height="54" key="GridCell.Tab.0.right" timestamp="1591024309974">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="905" height="54" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591024309974" />
+    <state x="184" y="7" key="SettingsEditor" timestamp="1591024243560">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1591024243560" />
+    <state x="263" y="20" key="com.intellij.database.dbimport.ImportDialog" timestamp="1590211612019">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="20" key="com.intellij.database.dbimport.ImportDialog/0.0.1366.728@0.0.1366.728" timestamp="1590211612019" />
+    <state x="392" y="2" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1590752785636">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="392" y="2" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1590752785636" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590391470931">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590391470931" />
+  </component>
+</project>

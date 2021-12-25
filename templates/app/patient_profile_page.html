@@ -1,0 +1,63 @@
+{% extends 'app/page_template.html' %}
+
+    {% load static %}
+
+    {% block title %}
+        OMEDS
+    {% endblock %}
+
+    {% block additions %}
+
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static 'app/css/patient_profile_page.css' %}">
+    {% endblock %}
+
+    {% block my_script %}
+        <script src="{% static 'app/js/patient_profile_page.js' %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1">
+            <div class="jumbotron header_layer_2">
+                <h1 align="center">Profile</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron view-card">
+
+            {% for alert in alerts %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ alert }}
+                    <button type="button" class="close alert-success-dissmiss-button" data-dismiss="alert" aria-label="Close">
+                        &#9932;
+                    </button>
+                </div>
+            {% endfor %}
+
+            <div class="jumbotron">
+                {% for user_datum in user_data %}
+
+                    <p>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="attach-text input-group-text">
+                                    {{ user_datum.0 }}
+                                </div>
+                            </div>
+
+                            <input class="form-control view-field" type="text" value="{{ user_datum.1 }}" readonly>
+
+                            <div class="input-group-append">
+                                <div class="input-group-text attach-text-link">
+                                    <a href="{% url 'app:change_data_page' data_name=user_datum.2 current_data=user_datum.1 %}">Edit or change</a>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}
